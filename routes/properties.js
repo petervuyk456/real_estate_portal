@@ -26,7 +26,7 @@ router.route("/add").post((req, res) => {
 
 router.route("/:id").get((req, res) => {
   Property.findById(req.params.id)
-    .then(() => res.json(property))
+    .then((property) => res.json(property))
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
